@@ -5,6 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/zhengzhipeng/Documents/code/jvm-cpp/main.cpp" "/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles/jvm_cpp.dir/main.cpp.o"
+  "/Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp" "/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o"
+  "/Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Klass.cpp" "/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o"
+  "/Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Reader.cpp" "/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

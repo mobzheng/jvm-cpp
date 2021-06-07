@@ -80,7 +80,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/zhengzhipeng/Documents/code/jvm-cpp/include/ClassLoader.h">
+			<Option target="jvm_cpp"/>
+		</Unit>
+		<Unit filename="/Users/zhengzhipeng/Documents/code/jvm-cpp/include/Klass.h">
+			<Option target="jvm_cpp"/>
+		</Unit>
+		<Unit filename="/Users/zhengzhipeng/Documents/code/jvm-cpp/include/Reader.h">
+			<Option target="jvm_cpp"/>
+		</Unit>
+		<Unit filename="/Users/zhengzhipeng/Documents/code/jvm-cpp/include/common.h">
+			<Option target="jvm_cpp"/>
+		</Unit>
 		<Unit filename="/Users/zhengzhipeng/Documents/code/jvm-cpp/main.cpp">
+			<Option target="jvm_cpp"/>
+		</Unit>
+		<Unit filename="/Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp">
+			<Option target="jvm_cpp"/>
+		</Unit>
+		<Unit filename="/Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Klass.cpp">
+			<Option target="jvm_cpp"/>
+		</Unit>
+		<Unit filename="/Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Reader.cpp">
 			<Option target="jvm_cpp"/>
 		</Unit>
 		<Unit filename="/Users/zhengzhipeng/Documents/code/jvm-cpp/CMakeLists.txt">

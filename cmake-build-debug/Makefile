@@ -169,6 +169,87 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/com/ff/jvm/hotspot/share/vm/ClassLoader.o: src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o
+
+.PHONY : src/com/ff/jvm/hotspot/share/vm/ClassLoader.o
+
+# target to build an object file
+src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o
+.PHONY : src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o
+
+src/com/ff/jvm/hotspot/share/vm/ClassLoader.i: src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.i
+
+.PHONY : src/com/ff/jvm/hotspot/share/vm/ClassLoader.i
+
+# target to preprocess a source file
+src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.i
+.PHONY : src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.i
+
+src/com/ff/jvm/hotspot/share/vm/ClassLoader.s: src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.s
+
+.PHONY : src/com/ff/jvm/hotspot/share/vm/ClassLoader.s
+
+# target to generate assembly for a file
+src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.s
+.PHONY : src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.s
+
+src/com/ff/jvm/hotspot/share/vm/Klass.o: src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o
+
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Klass.o
+
+# target to build an object file
+src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o
+
+src/com/ff/jvm/hotspot/share/vm/Klass.i: src/com/ff/jvm/hotspot/share/vm/Klass.cpp.i
+
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Klass.i
+
+# target to preprocess a source file
+src/com/ff/jvm/hotspot/share/vm/Klass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.i
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Klass.cpp.i
+
+src/com/ff/jvm/hotspot/share/vm/Klass.s: src/com/ff/jvm/hotspot/share/vm/Klass.cpp.s
+
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Klass.s
+
+# target to generate assembly for a file
+src/com/ff/jvm/hotspot/share/vm/Klass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.s
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Klass.cpp.s
+
+src/com/ff/jvm/hotspot/share/vm/Reader.o: src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o
+
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Reader.o
+
+# target to build an object file
+src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o
+
+src/com/ff/jvm/hotspot/share/vm/Reader.i: src/com/ff/jvm/hotspot/share/vm/Reader.cpp.i
+
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Reader.i
+
+# target to preprocess a source file
+src/com/ff/jvm/hotspot/share/vm/Reader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.i
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Reader.cpp.i
+
+src/com/ff/jvm/hotspot/share/vm/Reader.s: src/com/ff/jvm/hotspot/share/vm/Reader.cpp.s
+
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Reader.s
+
+# target to generate assembly for a file
+src/com/ff/jvm/hotspot/share/vm/Reader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.s
+.PHONY : src/com/ff/jvm/hotspot/share/vm/Reader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -181,6 +262,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/com/ff/jvm/hotspot/share/vm/ClassLoader.o"
+	@echo "... src/com/ff/jvm/hotspot/share/vm/ClassLoader.i"
+	@echo "... src/com/ff/jvm/hotspot/share/vm/ClassLoader.s"
+	@echo "... src/com/ff/jvm/hotspot/share/vm/Klass.o"
+	@echo "... src/com/ff/jvm/hotspot/share/vm/Klass.i"
+	@echo "... src/com/ff/jvm/hotspot/share/vm/Klass.s"
+	@echo "... src/com/ff/jvm/hotspot/share/vm/Reader.o"
+	@echo "... src/com/ff/jvm/hotspot/share/vm/Reader.i"
+	@echo "... src/com/ff/jvm/hotspot/share/vm/Reader.s"
 .PHONY : help
 
 

@@ -1,6 +1,8 @@
-#include <iostream>
+#include "include/ClassLoader.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    ClassLoader *classLoader = new ClassLoader;
+    classLoader->loadClass("/Users/zhengzhipeng/Documents/code/jvm-cpp/Test.class");
+
     return 0;
 }
