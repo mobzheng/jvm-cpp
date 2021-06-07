@@ -17,13 +17,21 @@ public:
         index = 0;
     };
 
-    void readU1(byte** arr);
+    void readU1(byte arr[]);
 
-    void readU2(byte** arr);
+    void readU2(byte arr[]);
 
-    void readU4(byte** arr);
+    void readU4(byte arr[]);
 
-    void readU8(byte** arr);
+    void readU8(byte arr[]);
+
+    byte *getBytes() const;
+
+    void setBytes(byte *bytes);
+
+    int getIndex() const;
+
+    void setIndex(int index);
 };
 
 

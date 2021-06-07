@@ -1,17 +1,27 @@
-//
-// Created by zhengzhipeng on 2021/6/7.
-//
 
 #ifndef JVM_CPP_KLASS_H
 #define JVM_CPP_KLASS_H
+
 #include "common.h"
 
-class Klass{
+class Klass {
+public:
+    byte *getMagic() const;
+
+    void setMagic(byte *magic);
+
+    byte *getMinorVersion() const;
+
+    void setMinorVersion(byte *minorVersion);
+
+    byte *getMajorVersion() const;
+
+    void setMajorVersion(byte *majorVersion);
 
 private:
-    byte * magic;
-    byte * minorVersion;
-    byte * majorVersion;
+    byte *magic;
+    byte *minorVersion;
+    byte *majorVersion;
 
 };
 

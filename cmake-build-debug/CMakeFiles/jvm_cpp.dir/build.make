@@ -53,19 +53,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/ff/Downloads/clion-2021.1.1/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /home/ff/Downloads/clion-2021.1.1/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhengzhipeng/Documents/code/jvm-cpp
+CMAKE_SOURCE_DIR = /home/ff/CLionProjects/jvm-cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ff/CLionProjects/jvm-cpp/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/jvm_cpp.dir/depend.make
@@ -78,62 +78,76 @@ include CMakeFiles/jvm_cpp.dir/flags.make
 
 CMakeFiles/jvm_cpp.dir/main.cpp.o: CMakeFiles/jvm_cpp.dir/flags.make
 CMakeFiles/jvm_cpp.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/jvm_cpp.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jvm_cpp.dir/main.cpp.o -c /Users/zhengzhipeng/Documents/code/jvm-cpp/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/jvm_cpp.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jvm_cpp.dir/main.cpp.o -c /home/ff/CLionProjects/jvm-cpp/main.cpp
 
 CMakeFiles/jvm_cpp.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jvm_cpp.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhengzhipeng/Documents/code/jvm-cpp/main.cpp > CMakeFiles/jvm_cpp.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ff/CLionProjects/jvm-cpp/main.cpp > CMakeFiles/jvm_cpp.dir/main.cpp.i
 
 CMakeFiles/jvm_cpp.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jvm_cpp.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhengzhipeng/Documents/code/jvm-cpp/main.cpp -o CMakeFiles/jvm_cpp.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ff/CLionProjects/jvm-cpp/main.cpp -o CMakeFiles/jvm_cpp.dir/main.cpp.s
 
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o: CMakeFiles/jvm_cpp.dir/flags.make
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o: ../src/com/ff/jvm/hotspot/share/vm/Klass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o -c /Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Klass.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o -c /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Klass.cpp
 
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Klass.cpp > CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Klass.cpp > CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.i
 
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Klass.cpp -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Klass.cpp -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.s
 
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o: CMakeFiles/jvm_cpp.dir/flags.make
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o: ../src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o -c /Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o -c /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp
 
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp > CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp > CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.i
 
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.s
 
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o: CMakeFiles/jvm_cpp.dir/flags.make
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o: ../src/com/ff/jvm/hotspot/share/vm/Reader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o -c /Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Reader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o -c /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Reader.cpp
 
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Reader.cpp > CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Reader.cpp > CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.i
 
 CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhengzhipeng/Documents/code/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Reader.cpp -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/Reader.cpp -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.s
+
+CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.o: CMakeFiles/jvm_cpp.dir/flags.make
+CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.o: ../src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.o -c /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp
+
+CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp > CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.i
+
+CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ff/CLionProjects/jvm-cpp/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp -o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.s
 
 # Object files for target jvm_cpp
 jvm_cpp_OBJECTS = \
 "CMakeFiles/jvm_cpp.dir/main.cpp.o" \
 "CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o" \
 "CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o" \
-"CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o"
+"CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o" \
+"CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.o"
 
 # External object files for target jvm_cpp
 jvm_cpp_EXTERNAL_OBJECTS =
@@ -142,9 +156,10 @@ jvm_cpp: CMakeFiles/jvm_cpp.dir/main.cpp.o
 jvm_cpp: CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o
 jvm_cpp: CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o
 jvm_cpp: CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o
+jvm_cpp: CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.o
 jvm_cpp: CMakeFiles/jvm_cpp.dir/build.make
 jvm_cpp: CMakeFiles/jvm_cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable jvm_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable jvm_cpp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/jvm_cpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -157,6 +172,6 @@ CMakeFiles/jvm_cpp.dir/clean:
 .PHONY : CMakeFiles/jvm_cpp.dir/clean
 
 CMakeFiles/jvm_cpp.dir/depend:
-	cd /Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhengzhipeng/Documents/code/jvm-cpp /Users/zhengzhipeng/Documents/code/jvm-cpp /Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug /Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug /Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles/jvm_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ff/CLionProjects/jvm-cpp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ff/CLionProjects/jvm-cpp /home/ff/CLionProjects/jvm-cpp /home/ff/CLionProjects/jvm-cpp/cmake-build-debug /home/ff/CLionProjects/jvm-cpp/cmake-build-debug /home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles/jvm_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/jvm_cpp.dir/depend
 

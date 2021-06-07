@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/ff/Downloads/clion-2021.1.1/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /home/ff/Downloads/clion-2021.1.1/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhengzhipeng/Documents/code/jvm-cpp
+CMAKE_SOURCE_DIR = /home/ff/CLionProjects/jvm-cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ff/CLionProjects/jvm-cpp/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -93,14 +93,14 @@ clean: CMakeFiles/jvm_cpp.dir/clean
 CMakeFiles/jvm_cpp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jvm_cpp.dir/build.make CMakeFiles/jvm_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target jvm_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target jvm_cpp"
 .PHONY : CMakeFiles/jvm_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/jvm_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/jvm_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhengzhipeng/Documents/code/jvm-cpp/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ff/CLionProjects/jvm-cpp/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/jvm_cpp.dir/rule
 
 # Convenience name for target.
