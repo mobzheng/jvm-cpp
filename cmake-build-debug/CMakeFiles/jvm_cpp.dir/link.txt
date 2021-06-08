@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/jvm_cpp.dir/main.cpp.o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Klass.cpp.o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/ClassLoader.cpp.o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/Reader.cpp.o CMakeFiles/jvm_cpp.dir/src/com/ff/jvm/hotspot/share/vm/MethodInfo.cpp.o -o jvm_cpp 

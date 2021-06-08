@@ -5,6 +5,7 @@
 #ifndef JVM_CPP_READER_H
 #define JVM_CPP_READER_H
 #include"common.h"
+#include <iostream>
 class Reader {
 private:
     byte * bytes;
@@ -17,13 +18,15 @@ public:
         index = 0;
     };
 
-    void readU1(byte arr[]);
+    byte* readU1();
 
-    void readU2(byte arr[]);
+    byte *readU2();
 
-    void readU4(byte arr[]);
+    byte *readU4();
 
-    void readU8(byte arr[]);
+    byte *readU8();
+
+    int readU1Simple();
 
     byte *getBytes() const;
 
@@ -32,6 +35,14 @@ public:
     int getIndex() const;
 
     void setIndex(int index);
+
+    int readU2Simple();
+
+    byte * read(int len);
+
+    int readU4Simple();
+
+    long readU8Simple();
 };
 
 
