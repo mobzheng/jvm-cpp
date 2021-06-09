@@ -9,18 +9,27 @@
 class FieldInfo {
 
 private:
-    int class_index;
-    int name_type_index;
-
+    int accessFlags;
+    int nameIndex;
+    int descriptorIndex;
+    int attributesCount;
 
 public:
-    int getClassIndex() const;
+    int getAccessFlags() const;
 
-    void setClassIndex(int classIndex);
+    void setAccessFlags(int accessFlags);
 
-    int getNameTypeIndex() const;
+    int getNameIndex() const;
 
-    void setNameTypeIndex(int nameTypeIndex);
+    void setNameIndex(int nameIndex);
+
+    int getDescriptorIndex() const;
+
+    void setDescriptorIndex(int descriptorIndex);
+
+    int getAttributesCount() const;
+
+    void setAttributesCount(int attributesCount);
 };
 
 

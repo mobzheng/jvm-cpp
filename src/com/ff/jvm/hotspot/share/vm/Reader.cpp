@@ -7,7 +7,7 @@
 
 byte *Reader::readU1() {
     byte *temparr = (byte *) malloc(sizeof(byte) * 1);
-    printf("read  %s %d  = %d\n",__FUNCTION__ ,index, bytes[index]);
+//    printf("read  %s %d  = %d\n",__FUNCTION__ ,index, bytes[index]);
     temparr[0] = bytes[index++];
     return temparr;
 }
@@ -15,7 +15,7 @@ byte *Reader::readU1() {
 byte *Reader::readU2() {
     byte *temparr = (byte *) malloc(sizeof(byte) * 2);
     for (int i = 0; i < 2; ++i) {
-        printf("read  %s %d  = %d\n",__FUNCTION__ ,index, bytes[index]);
+//        printf("read  %s %d  = %d\n",__FUNCTION__ ,index, bytes[index]);
         temparr[i] = bytes[index++];
     }
     return temparr;
@@ -24,7 +24,7 @@ byte *Reader::readU2() {
 byte *Reader::readU4() {
     byte *temparr = (byte *) malloc(sizeof(byte) * 4);
     for (int i = 0; i < 4; ++i) {
-        printf("read  %s %d  = %d\n",__FUNCTION__ ,index, bytes[index]);
+//        printf("read  %s %d  = %d\n",__FUNCTION__ ,index, bytes[index]);
         temparr[i] = bytes[index++];
     }
     return temparr;
@@ -34,7 +34,7 @@ byte *Reader::readU4() {
 byte *Reader::readU8() {
     byte *temparr = (byte *) malloc(sizeof(byte) * 4);
     for (int i = 0; i < 8; ++i) {
-        printf("read  %s %d  = %d\n",__FUNCTION__ ,index, bytes[index]);
+//        printf("read  %s %d  = %d\n",__FUNCTION__ ,index, bytes[index]);
         temparr[i] = bytes[index++];
     }
     return temparr;
@@ -87,4 +87,11 @@ long Reader::readU8Simple() {
     int high = readU4Simple();
     int low = readU4Simple();
     return high << 16 | low;
+}
+
+Reader::Reader(byte *buf, int len) {
+    Reader::bytes=buf;
+    Reader::index = 0;
+    Reader::len = len;
+
 }

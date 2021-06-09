@@ -22,7 +22,8 @@ public:
 
      void parseAttribute(Klass *pKlass, Reader *pReader);
 
-    AttributeInfo **parseMethodAttr(Method *pMethod, Reader *pReader);
+    CodeAttr ** parseMethodAttr(Method *pMethod, Reader *pReader, Klass *klass);
+
 };
 
 

@@ -28,19 +28,23 @@ void Method::setDesIndex(int desIndex) {
     des_index = desIndex;
 }
 
-int Method::getAttrConunt() const {
-    return attr_conunt;
+
+
+int Method::getAttrCount() const {
+    return attr_count;
 }
 
-void Method::setAttrConunt(int attrConunt) {
-    attr_conunt = attrConunt;
+void Method::setAttrCount(int attrCount) {
+    attr_count = attrCount;
 }
 
-AttributeInfo **Method::getAttribute() const {
-    return attribute;
+CodeAttr **Method::getCodeInfos() const {
+    return codeInfos;
 }
 
-void Method::setAttribute(AttributeInfo **attribute) {
-    Method::attribute = attribute;
+void Method::setCodeInfos(CodeAttr **codeInfos) {
+    Method::codeInfos = codeInfos;
 }
+
+
 

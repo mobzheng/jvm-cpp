@@ -4,16 +4,23 @@
 
 #ifndef JVM_CPP_METHOD_H
 #define JVM_CPP_METHOD_H
+
 #include "common.h"
 #include "AttributeInfo.h"
+#include "CodeAttr.h"
+#include <map>
+
+using namespace std;
 
 class Method {
 private:
     int access_flags;
     int name_index;
     int des_index;
-    int attr_conunt;
-    AttributeInfo ** attribute;
+    int attr_count;
+    CodeAttr **codeInfos;
+
+
 public:
     int getAccessFlags() const;
 
@@ -27,13 +34,14 @@ public:
 
     void setDesIndex(int desIndex);
 
-    int getAttrConunt() const;
+    int getAttrCount() const;
 
-    void setAttrConunt(int attrConunt);
+    void setAttrCount(int attrCount);
 
-    AttributeInfo **getAttribute() const;
+    CodeAttr **getCodeInfos() const;
 
-    void setAttribute(AttributeInfo **attribute);
+    void setCodeInfos(CodeAttr **codeInfos);
+
 };
 
 

@@ -41,19 +41,24 @@ public:
     static const int JVM_CONSTANT_ExternalMax = 18;
 
 
-    ConstantPool(Klass *_klass);
+    ConstantPool(Klass *_klass, int len);
 
     int *getTag();
 
     void setTag(int *tag);
 
-    const map<int, byte *> &getDatamap() const;
 
-    void setDatamap(const map<int, byte *> &datamap);
+    Klass *getKlass() const;
+
+    void setKlass(Klass *klass);
 
     int getLen() const;
 
     void setLen(int len);
+
+     map<int, byte *> getDatamap();
+
+    void setDatamap(const map<int, byte *> &datamap);
 
     void addItem(int tag, int index, byte *val);
 

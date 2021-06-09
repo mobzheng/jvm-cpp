@@ -4,18 +4,34 @@
 
 #include "../../../../../../../include/FieldInfo.h"
 
-int FieldInfo::getClassIndex() const {
-    return class_index;
+int FieldInfo::getAccessFlags() const {
+    return accessFlags;
 }
 
-void FieldInfo::setClassIndex(int classIndex) {
-    class_index = classIndex;
+void FieldInfo::setAccessFlags(int accessFlags) {
+    FieldInfo::accessFlags = accessFlags;
 }
 
-int FieldInfo::getNameTypeIndex() const {
-    return name_type_index;
+int FieldInfo::getNameIndex() const {
+    return nameIndex;
 }
 
-void FieldInfo::setNameTypeIndex(int nameTypeIndex) {
-    name_type_index = nameTypeIndex;
+void FieldInfo::setNameIndex(int nameIndex) {
+    FieldInfo::nameIndex = nameIndex;
+}
+
+int FieldInfo::getDescriptorIndex() const {
+    return descriptorIndex;
+}
+
+void FieldInfo::setDescriptorIndex(int descriptorIndex) {
+    FieldInfo::descriptorIndex = descriptorIndex;
+}
+
+int FieldInfo::getAttributesCount() const {
+    return attributesCount;
+}
+
+void FieldInfo::setAttributesCount(int attributesCount) {
+    FieldInfo::attributesCount = attributesCount;
 }

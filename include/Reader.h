@@ -10,13 +10,11 @@ class Reader {
 private:
     byte * bytes;
     int index;
+    int len;
 
 
 public:
-    Reader(byte* buf){
-        bytes=buf;
-        index = 0;
-    };
+    Reader(byte* buf,int len);
 
     byte* readU1();
 
