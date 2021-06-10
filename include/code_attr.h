@@ -2,17 +2,17 @@
 // Created by zhengzhipeng on 2021/6/9.
 //
 
-#ifndef JVM_CPP_CODEATTR_H
-#define JVM_CPP_CODEATTR_H
+#ifndef JVM_CPP_CODE_ATTR_H
+#define JVM_CPP_CODE_ATTR_H
 
 
 #include "common.h"
-#include "AttributeInfo.h"
-#include "ExeceptionTable.h"
+#include "attribute_info.h"
+#include "exeception_table.h"
 #include <string>
 #include <map>
 using namespace std;
-class CodeAttr {
+class code_attr {
 private:
     int attr_name_index;
     int attr_len;
@@ -21,9 +21,9 @@ private:
     int code_len;
     byte* code;
     int exception_table_len;
-    ExeceptionTable* execeptionTable;
+    exeception_table* execeptionTable;
     int attr_count;
-    map<string,AttributeInfo> attributeInfomap;
+    map<string,attribute_info> attributeInfomap;
 public:
     int getAttrNameIndex() const;
 
@@ -53,19 +53,19 @@ public:
 
     void setExceptionTableLen(int exceptionTableLen);
 
-    ExeceptionTable *getExeceptionTable() const;
+    exeception_table *getExeceptionTable() const;
 
-    void setExeceptionTable(ExeceptionTable *execeptionTable);
+    void setExeceptionTable(exeception_table *execeptionTable);
 
     int getAttrCount() const;
 
     void setAttrCount(int attrCount);
 
-    const map<string, AttributeInfo> &getAttributeInfomap() const;
+    const map<string, attribute_info> &getAttributeInfomap() const;
 
-    void setAttributeInfomap(const map<string, AttributeInfo> &attributeInfomap);
+    void setAttributeInfomap(const map<string, attribute_info> &attributeInfomap);
 
 };
 
 
-#endif //JVM_CPP_CODEATTR_H
+#endif //JVM_CPP_CODE_ATTR_H

@@ -2,11 +2,11 @@
 // Created by zhengzhipeng on 2021/6/8.
 //
 
-#ifndef JVM_CPP_FIELDINFO_H
-#define JVM_CPP_FIELDINFO_H
+#ifndef JVM_CPP_FIELD_INFO_H
+#define JVM_CPP_FIELD_INFO_H
 
 
-class FieldInfo {
+class field_info {
 
 private:
     int accessFlags;
@@ -33,4 +33,4 @@ public:
 };
 
 
-#endif //JVM_CPP_FIELDINFO_H
+#endif //JVM_CPP_FIELD_INFO_H

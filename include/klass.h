@@ -3,14 +3,15 @@
 #define JVM_CPP_KLASS_H
 
 #include "common.h"
-#include "Interface.h"
-#include "FieldInfo.h"
-#include "Method.h"
-#include "Attributes.h"
-#include "ConstantPool.h"
+#include "interface.h"
+#include "field_info.h"
+#include "method.h"
+#include "attributes.h"
+#include "constant_pool.h"
 #include <memory>
-class ConstantPool;
-class Klass {
+class constant_pool;
+
+class klass {
 public:
     byte *getMagic() const;
 
@@ -55,43 +56,43 @@ public:
 
     void setAttributesCount(int attributesCount);
 
-    Attributes *getAttributes() const;
+    attributes *getAttributes() const;
 
-    void setAttributes(Attributes *attributes);
+    void setAttributes(class attributes *attributes);
 
-    ConstantPool *getConstantPool() const;
+    constant_pool *getConstantPool() const;
 
-    void setConstantPool(ConstantPool *constantPool);
+    void setConstantPool(constant_pool *constantPool);
 
-    Interface **getInterfaces() const;
+    interface **getInterfaces() const;
 
-    void setInterfaces(Interface **interfaces);
+    void setInterfaces(interface **interfaces);
 
-    FieldInfo **getFieldInfos() const;
+    field_info **getFieldInfos() const;
 
-    void setFieldInfos(FieldInfo **fieldInfos);
+    void setFieldInfos(field_info **fieldInfos);
 
-    Method **getMethods() const;
+    method **getMethods() const;
 
-    void setMethods(Method **methods);
+    void setMethods(method **methods);
 
 private:
     byte *magic;
     byte *minorVersion;
     byte *majorVersion;
-    ConstantPool* constantPool;
+    constant_pool* constantPool;
 
     int accessFlags;
     int thisClass;
     int superClass;
     int interfaceCount;
-    Interface** interfaces;
+    interface** interfaces;
     int fieldCount;
-    FieldInfo** fieldInfos;
+    field_info** fieldInfos;
     int methodCount;
-    Method** methods;
+    method** methods;
     int attributesCount;
-    Attributes* attributes;
+    attributes* attributes;
 
 
 };

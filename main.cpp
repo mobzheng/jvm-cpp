@@ -1,9 +1,9 @@
-#include "include/ClassLoader.h"
+#include "include/class_loader.h"
 #include <map>
 #include <string>
 using namespace std;
 int main() {
-    ClassLoader *classLoader = new ClassLoader;
+    class_loader *classLoader = new class_loader;
     classLoader->loadClass("/Users/zhengzhipeng/Documents/code/jvm-cpp/Test.class");
     return 0;
 }

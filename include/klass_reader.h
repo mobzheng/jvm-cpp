@@ -2,11 +2,11 @@
 // Created by zhengzhipeng on 2021/6/7.
 //
 
-#ifndef JVM_CPP_READER_H
-#define JVM_CPP_READER_H
+#ifndef JVM_CPP_KLASS_READER_H
+#define JVM_CPP_KLASS_READER_H
 #include"common.h"
 #include <iostream>
-class Reader {
+class klass_reader {
 private:
     byte * bytes;
     int index;
@@ -14,7 +14,7 @@ private:
 
 
 public:
-    Reader(byte* buf,int len);
+    klass_reader(byte* buf,int len);
 
     byte* readU1();
 
@@ -45,4 +45,4 @@ public:
 
 
 
-#endif //JVM_CPP_READER_H
+#endif //JVM_CPP_KLASS_READER_H

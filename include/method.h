@@ -6,19 +6,19 @@
 #define JVM_CPP_METHOD_H
 
 #include "common.h"
-#include "AttributeInfo.h"
-#include "CodeAttr.h"
+#include "attribute_info.h"
+#include "code_attr.h"
 #include <map>
 
 using namespace std;
 
-class Method {
+class method {
 private:
     int access_flags;
     int name_index;
     int des_index;
     int attr_count;
-    CodeAttr **codeInfos;
+    code_attr **codeInfos;
 
 
 public:
@@ -38,9 +38,9 @@ public:
 
     void setAttrCount(int attrCount);
 
-    CodeAttr **getCodeInfos() const;
+    code_attr **getCodeInfos() const;
 
-    void setCodeInfos(CodeAttr **codeInfos);
+    void setCodeInfos(code_attr **codeInfos);
 
 };
 

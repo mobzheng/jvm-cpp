@@ -6,7 +6,7 @@
 #define JVM_CPP_INTERFACE_H
 
 
-class Interface {
+class interface {
 private:
     int nameIndex;
 

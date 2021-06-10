@@ -2,11 +2,11 @@
 // Created by zhengzhipeng on 2021/6/8.
 //
 
-#ifndef JVM_CPP_LINENUMBERTABLE_H
-#define JVM_CPP_LINENUMBERTABLE_H
+#ifndef JVM_CPP_LINE_NUMBER_TABLE_H
+#define JVM_CPP_LINE_NUMBER_TABLE_H
 
 
-class LineNumberTable {
+class line_number_table {
 private:
     int start_pc;
     int line_number;
@@ -22,4 +22,4 @@ public:
 };
 
 
-#endif //JVM_CPP_LINENUMBERTABLE_H
+#endif //JVM_CPP_LINE_NUMBER_TABLE_H

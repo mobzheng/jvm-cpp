@@ -5,14 +5,14 @@
 #ifndef JVM_CPP_METHODINFO_H
 #define JVM_CPP_METHODINFO_H
 #include "common.h"
-#include "AttributeInfo.h"
-class MethodInfo {
+#include "attribute_info.h"
+class methodInfo {
 private:
     int accessFlags;
     int nameIndex;
     int desindex;
     int attrCount;
-    AttributeInfo* aAttributeInfo;
+    attribute_info* aAttributeInfo;
 
 public:
 
@@ -32,9 +32,9 @@ public:
 
     void setDesindex(int desindex);
 
-    AttributeInfo *getAAttributeInfo() const;
+    attribute_info *getAAttributeInfo() const;
 
-    void setAAttributeInfo(AttributeInfo *aAttributeInfo);
+    void setAAttributeInfo(attribute_info *aAttributeInfo);
 
 };
 

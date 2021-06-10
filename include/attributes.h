@@ -6,7 +6,7 @@
 #define JVM_CPP_ATTRIBUTES_H
 
 
-class Attributes {
+class attributes {
 
 };
 

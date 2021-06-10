@@ -2,24 +2,24 @@
 // Created by zhengzhipeng on 2021/6/8.
 //
 
-#ifndef JVM_CPP_CONSTANTPOOL_H
-#define JVM_CPP_CONSTANTPOOL_H
+#ifndef JVM_CPP_CONSTANT_POOL_H
+#define JVM_CPP_CONSTANT_POOL_H
 
 #include <map>
 #include<string>
 #include"common.h"
-#include "Klass.h"
+#include "klass.h"
 
 using namespace std;
 
-class Klass;
+class klass;
 
-class ConstantPool {
+class constant_pool {
 private:
     int *tag;
-    map<int, byte *> datamap;
+    map<int, byte *> data_map;
     int len;
-    Klass *klass;
+    klass *klass;
 
 
 public:
@@ -41,28 +41,28 @@ public:
     static const int JVM_CONSTANT_ExternalMax = 18;
 
 
-    ConstantPool(Klass *_klass, int len);
+    constant_pool(class klass *_klass, int len);
 
-    int *getTag();
+
+    void addItem(int tag, int index, byte *val);
+
+    int *getTag() const;
 
     void setTag(int *tag);
 
+    const map<int, byte *> &getDataMap() const;
 
-    Klass *getKlass() const;
-
-    void setKlass(Klass *klass);
+    void setDataMap(const map<int, byte *> &dataMap);
 
     int getLen() const;
 
     void setLen(int len);
 
-     map<int, byte *> getDatamap();
+    class klass *getKlass() const;
 
-    void setDatamap(const map<int, byte *> &datamap);
-
-    void addItem(int tag, int index, byte *val);
+    void setKlass(class klass *klass);;
 
 };
 
 
-#endif //JVM_CPP_CONSTANTPOOL_H
+#endif //JVM_CPP_CONSTANT_POOL_H
