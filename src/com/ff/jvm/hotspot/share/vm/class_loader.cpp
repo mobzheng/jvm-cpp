@@ -182,7 +182,7 @@ code_attr *class_loader::parseAttribute(klass *pKlass, klass_reader *pReader) {
 }
 
 code_attr **class_loader::parseMethodAttr(method *pMethod, klass_reader *pReader, klass *_klass) {
-    map<int,void*> data_map = _klass->getConstantPool()->getDataMap();
+    map<int, void *> data_map = _klass->getConstantPool()->getDataMap();
     int attrCount = pMethod->getAttrCount();
     if (attrCount < 1) {
         return NULL;
@@ -204,37 +204,52 @@ code_attr **class_loader::parseMethodAttr(method *pMethod, klass_reader *pReader
         // todo 异常表解析
         codeAttr->setAttrCount(pReader->readU2Simple());
 
-        for (int j = 0; j < codeAttr->getAttrLen(); ++j) {
-            int code_name_index =  pReader->readU2Simple();
+        for (int j = 0; j < codeAttr->getAttrCount(); ++j) {
+            int code_name_index = pReader->readU2Simple();
+            j += 2;
+
             byte *attr_name = (byte *) data_map.find(code_name_index)->second;
-            if (strcmp("LineNumberTable", attr_name)){
+            if (strstr(attr_name, "LineNumberTable")) {
                 line_number_table_attr *lineNumberTableAttr = new line_number_table_attr;
 
-                lineNumberTableAttr->setAttrNameIndex(pReader->readU2Simple());
+                lineNumberTableAttr->setAttrNameIndex(code_name_index);
                 lineNumberTableAttr->setAttrLen(pReader->readU4Simple());
+                j  += 4;
+
                 lineNumberTableAttr->setLineNumLen(pReader->readU2Simple());
+                j += 2;
+
                 for (int k = 0; k < lineNumberTableAttr->getLineNumLen(); ++k) {
-                    line_number_table* lineNumberTable = new line_number_table;
+                    line_number_table *lineNumberTable = new line_number_table;
 //                    lineNumberTableAttr->getLineNumberTable()[k] = lineNumberTable;
                     lineNumberTable->setStartPc(pReader->readU2Simple());
+                    j += 2;
                     lineNumberTable->setLineNumber(pReader->readU2Simple());
+                    j += 2;
                 }
-            } else if (strcmp("LocalVariableTable",attr_name)){
-                local_variable_table_attribute* localVariableTableAttribute = new local_variable_table_attribute;
-                localVariableTableAttribute->setAttrNameIndex(pReader->readU2Simple());
+            } else if (strstr(attr_name, "LocalVariableTable")) {
+                local_variable_table_attribute *localVariableTableAttribute = new local_variable_table_attribute;
+                localVariableTableAttribute->setAttrNameIndex(code_name_index);
                 localVariableTableAttribute->setAttrLen(pReader->readU4Simple());
+                j+= 4;
                 localVariableTableAttribute->setLocalVariableLen(pReader->readU2Simple());
+                j+= 2;
                 for (int k = 0; k < localVariableTableAttribute->getLocalVariableLen(); ++k) {
                     local_variable_table *localVariableTable = new local_variable_table;
 //                    localVariableTableAttribute->getPVariableTable()[k] = localVariableTable;
                     localVariableTable->setStartPc(pReader->readU2Simple());
+                    j+= 2;
                     localVariableTable->setLen(pReader->readU2Simple());
+                    j+= 2;
                     localVariableTable->setNameIndex(pReader->readU2Simple());
+                    j+= 2;
                     localVariableTable->setDescriptorIndex(pReader->readU2Simple());
+                    j+= 2;
                     localVariableTable->setIndex(pReader->readU2Simple());
+                    j+= 2;
                 }
             }
-            PRINT("解析  %s",attr_name);
+            PRINT("解析  %s", attr_name);
         }
 
 
