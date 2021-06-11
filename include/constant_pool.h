@@ -17,7 +17,7 @@ class klass;
 class constant_pool {
 private:
     int *tag;
-    map<int, byte *> data_map;
+    map<int, void *> data_map;
     int len;
     klass *klass;
 
@@ -44,15 +44,15 @@ public:
     constant_pool(class klass *_klass, int len);
 
 
-    void addItem(int tag, int index, byte *val);
+    void addItem(int tag, int index, void *val);
 
     int *getTag() const;
 
     void setTag(int *tag);
 
-    const map<int, byte *> &getDataMap() const;
+    const map<int, void *> &getDataMap() const;
 
-    void setDataMap(const map<int, byte *> &dataMap);
+    void setDataMap(const map<int, void *> &dataMap);
 
     int getLen() const;
 

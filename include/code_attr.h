@@ -12,6 +12,7 @@
 #include <string>
 #include <map>
 using namespace std;
+
 class code_attr {
 private:
     int attr_name_index;
@@ -25,6 +26,7 @@ private:
     int attr_count;
     map<string,attribute_info> attributeInfomap;
 public:
+
     int getAttrNameIndex() const;
 
     void setAttrNameIndex(int attrNameIndex);

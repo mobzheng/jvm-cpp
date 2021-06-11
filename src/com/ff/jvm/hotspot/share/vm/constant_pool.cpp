@@ -4,7 +4,7 @@
 
 #include "../../../../../../../include/constant_pool.h"
 
-void constant_pool::addItem(int tag, int index, byte *val) {
+void constant_pool::addItem(int tag, int index, void *val) {
     constant_pool::tag[index] = tag;
     constant_pool::data_map[index] = val;
 }
@@ -22,11 +22,11 @@ void constant_pool::setTag(int *tag) {
     constant_pool::tag = tag;
 }
 
-const map<int, byte *> &constant_pool::getDataMap() const {
+const map<int, void *> &constant_pool::getDataMap() const {
     return data_map;
 }
 
-void constant_pool::setDataMap(const map<int, byte *> &dataMap) {
+void constant_pool::setDataMap(const map<int, void *> &dataMap) {
     data_map = dataMap;
 }
 

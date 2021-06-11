@@ -32,7 +32,7 @@ klass *class_loader::parseKlass(klass_reader *reader) {
     // 主版本号
     klass->setMajorVersion(reader->readU2());
     // 常量池大小
-    constant_pool *constantPool = new constant_pool(klass,reader->readU2Simple());
+    constant_pool *constantPool = new constant_pool(klass, reader->readU2Simple());
     klass->setConstantPool(constantPool);
     parseConstantPool(constantPool, reader);
 
@@ -62,21 +62,27 @@ void class_loader::parseConstantPool(constant_pool *pPool, klass_reader *pReader
     for (int i = 1; i < len; ++i) {
         int tag = pReader->readU1Simple();
         switch (tag) {
-            case constant_pool::JVM_CONSTANT_Class:
+            case constant_pool::JVM_CONSTANT_Class: {
                 tags[i] = tag;
-                pPool->addItem(tag, i, pReader->readU2());
+                int class_val = pReader->readU2Simple();
+                pPool->addItem(tag, i, &class_val);
+                PRINT("#%d = %s\t#%d\n", i, "JVM_CONSTANT_Class", class_val);
+            }
                 break;
             case constant_pool::JVM_CONSTANT_Utf8: {
                 tags[i] = tag;
                 int str_len = pReader->readU2Simple();
                 byte *str = pReader->read(str_len);
                 pPool->addItem(tag, i, str);
-                printf("读取到的字符串 index = %d str = %s\n", i, str);
+                PRINT("#%d = %s\t%s\n", i, "JVM_CONSTANT_Utf8", str);
             }
                 break;
             case constant_pool::JVM_CONSTANT_String: {
 
-                pPool->addItem(tag, i, pReader->readU2());
+                int str_index = pReader->readU2Simple();
+                pPool->addItem(tag, i, &str_index);
+                PRINT("#%d = %s\t#%d\n", i, "JVM_CONSTANT_Class", str_index);
+
             }
                 break;
             case constant_pool::JVM_CONSTANT_Methodref: {
@@ -84,14 +90,16 @@ void class_loader::parseConstantPool(constant_pool *pPool, klass_reader *pReader
                 method[0] = pReader->readU2Simple();
                 method[1] = pReader->readU2Simple();
                 pPool->addItem(tag, i, method);
-                printf("解析方法\n");
+                PRINT("#%d = %s\t#%hhu.#%hhu \n", i, "JVM_CONSTANT_Utf8", method[0], method[1]);
             }
                 break;
             case constant_pool::JVM_CONSTANT_Double: {
                 tags[i] = tag;
-                byte *double_info = pReader->readU8();
-                pPool->addItem(tag, i++, double_info);
-                pPool->addItem(tag, i, double_info);
+                double double_val = atof(pReader->readU8());
+                PRINT("#%d = %s\t%fl \n", i, "JVM_CONSTANT_Double", double_val);
+                pPool->addItem(tag, i++, &double_val);
+                pPool->addItem(tag, i, &double_val);
+                PRINT("#%d = %s\t%fl \n", i, "JVM_CONSTANT_Double", double_val);
             }
                 break;
             case constant_pool::JVM_CONSTANT_Fieldref: {
@@ -99,6 +107,7 @@ void class_loader::parseConstantPool(constant_pool *pPool, klass_reader *pReader
                 fieldinfo[0] = pReader->readU2Simple();
                 fieldinfo[1] = pReader->readU2Simple();
                 pPool->addItem(tag, i, fieldinfo);
+                PRINT("#%d = %s\t#%hhu.#%hhu \n", i, "JVM_CONSTANT_Fieldref", fieldinfo[0], fieldinfo[1]);
             }
                 break;
             case constant_pool::JVM_CONSTANT_NameAndType: {
@@ -106,28 +115,22 @@ void class_loader::parseConstantPool(constant_pool *pPool, klass_reader *pReader
                 name_type[0] = pReader->readU2Simple();
                 name_type[1] = pReader->readU2Simple();
                 pPool->addItem(tag, i, name_type);
+                PRINT("#%d = %s\t#%hhu.#%hhu \n", i, "JVM_CONSTANT_NameAndType", name_type[0], name_type[1]);
+
             }
                 break;
             default:
-                printf("未支持的类型 tag = %d index = %d  上一个 tag = %d", tag, i, tags[i - 1]);
+                ERROR_PRINT("未支持的类型 tag = %d index = %d  上一个 tag = %d", tag, i, tags[i - 1]);
                 exit(0);
         }
 
     }
-    printf("常量池解析完毕\n");
-    map<int, byte *> map = pPool->getDataMap();
-
-    for (int i = 1; i <= map.size(); ++i) {
-        printf("key = %d val = %s\n", i, map[i]);
-    }
-
-
+    PRINT("常量池解析完毕\n");
 }
 
 void class_loader::parseInterface(klass *pKlass, klass_reader *pReader) {
     int interfaceCount = pKlass->getInterfaceCount();
-    if (interfaceCount<1)
-    {
+    if (interfaceCount < 1) {
         return;
     }
     for (int i = 0; i < interfaceCount; ++i) {
@@ -146,6 +149,9 @@ void class_loader::parseField(klass *pKlass, klass_reader *pReader) {
         fieldInfo->setNameIndex(pReader->readU2Simple());
         fieldInfo->setDescriptorIndex(pReader->readU2Simple());
         fieldInfo->setAttributesCount(pReader->readU2Simple());
+        for (int j = 0; j < fieldInfo->getAttributesCount(); ++j) {
+            parseAttribute(pKlass, pReader);
+        }
     }
 
 }
@@ -163,18 +169,22 @@ void class_loader::parseMethod(klass *pKlass, klass_reader *pReader) {
     }
 }
 
-void class_loader::parseAttribute(klass *pKlass, klass_reader *pReader) {
-    map<int,byte*> datamap = pKlass->getConstantPool()->getDataMap();
-
+code_attr *class_loader::parseAttribute(klass *pKlass, klass_reader *pReader) {
+    map<int, void *> datamap = pKlass->getConstantPool()->getDataMap();
     int attr_index = pReader->readU2Simple();
-    byte * name = datamap[attr_index];
-    printf("name = %s", name);
+    byte *name = (byte *) datamap[attr_index];
+    if (!strcmp("ConstantValue", name)) {
+        int attr_len = pReader->readU4Simple();
+        int constant_val = pReader->readU2Simple();
+    }
+
+    PRINT("name = %s", name);
 }
 
-code_attr ** class_loader::parseMethodAttr(method *pMethod, klass_reader *pReader, klass *klass) {
+code_attr **class_loader::parseMethodAttr(method *pMethod, klass_reader *pReader, klass *_klass) {
+    map<int,void*> data_map = _klass->getConstantPool()->getDataMap();
     int attrCount = pMethod->getAttrCount();
-    if (attrCount<1)
-    {
+    if (attrCount < 1) {
         return NULL;
     }
     code_attr **pCodeAttr = (code_attr **) malloc(sizeof(code_attr **) * attrCount);
@@ -193,7 +203,39 @@ code_attr ** class_loader::parseMethodAttr(method *pMethod, klass_reader *pReade
         codeAttr->setExceptionTableLen(pReader->readU2Simple());
         // todo 异常表解析
         codeAttr->setAttrCount(pReader->readU2Simple());
-        parseAttribute(klass,pReader);
+
+        for (int j = 0; j < codeAttr->getAttrLen(); ++j) {
+            int code_name_index =  pReader->readU2Simple();
+            byte *attr_name = (byte *) data_map.find(code_name_index)->second;
+            if (strcmp("LineNumberTable", attr_name)){
+                line_number_table_attr *lineNumberTableAttr = new line_number_table_attr;
+
+                lineNumberTableAttr->setAttrNameIndex(pReader->readU2Simple());
+                lineNumberTableAttr->setAttrLen(pReader->readU4Simple());
+                lineNumberTableAttr->setLineNumLen(pReader->readU2Simple());
+                for (int k = 0; k < lineNumberTableAttr->getLineNumLen(); ++k) {
+                    line_number_table* lineNumberTable = new line_number_table;
+//                    lineNumberTableAttr->getLineNumberTable()[k] = lineNumberTable;
+                    lineNumberTable->setStartPc(pReader->readU2Simple());
+                    lineNumberTable->setLineNumber(pReader->readU2Simple());
+                }
+            } else if (strcmp("LocalVariableTable",attr_name)){
+                local_variable_table_attribute* localVariableTableAttribute = new local_variable_table_attribute;
+                localVariableTableAttribute->setAttrNameIndex(pReader->readU2Simple());
+                localVariableTableAttribute->setAttrLen(pReader->readU4Simple());
+                localVariableTableAttribute->setLocalVariableLen(pReader->readU2Simple());
+                for (int k = 0; k < localVariableTableAttribute->getLocalVariableLen(); ++k) {
+                    local_variable_table *localVariableTable = new local_variable_table;
+//                    localVariableTableAttribute->getPVariableTable()[k] = localVariableTable;
+                    localVariableTable->setStartPc(pReader->readU2Simple());
+                    localVariableTable->setLen(pReader->readU2Simple());
+                    localVariableTable->setNameIndex(pReader->readU2Simple());
+                    localVariableTable->setDescriptorIndex(pReader->readU2Simple());
+                    localVariableTable->setIndex(pReader->readU2Simple());
+                }
+            }
+            PRINT("解析  %s",attr_name);
+        }
 
 
 //        int tag = pReader->readU2Simple();

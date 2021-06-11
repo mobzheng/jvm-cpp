@@ -34,7 +34,6 @@ byte *klass_reader::readU4() {
 byte *klass_reader::readU8() {
     byte *temparr = (byte *) malloc(sizeof(byte) * 4);
     for (int i = 0; i < 8; ++i) {
-//        printf("read  %s %d  = %d\n",__FUNCTION__ ,index, bytes[index]);
         temparr[i] = bytes[index++];
     }
     return temparr;

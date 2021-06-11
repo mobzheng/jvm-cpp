@@ -5,7 +5,11 @@
 #include "klass_reader.h"
 #include "klass.h"
 #include "constant_pool.h"
-
+#include "code_attr.h"
+#include "line_number_table.h"
+#include "line_number_table_attr.h"
+#include "local_variable_table_attribute.h"
+#include "local_variable_table.h"
 class class_loader {
 public:
     void loadClass(char *className);
@@ -20,7 +24,7 @@ public:
 
     void parseMethod(klass *pKlass, klass_reader *pReader);
 
-     void parseAttribute(klass *pKlass, klass_reader *pReader);
+     code_attr* parseAttribute(klass *pKlass, klass_reader *pReader);
 
     code_attr ** parseMethodAttr(method *pMethod, klass_reader *pReader, klass *klass);
 
